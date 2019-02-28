@@ -1,0 +1,12 @@
+<div id="nav-holder" class="container d-flex justify-content-center align-items-center">
+    <nav class="d-flex row  text-center text-light ">
+      <ul class="nav border-bottom border-left border-md-right rounded-left shadow-lg">
+        <li *ngFor="let item of navsItem; let i = index " class= "nav-item">
+          <button class="btn">
+            <a class="text-light" [href]="navsItem[i].link">{{navsItem[i].name}}</a>
+          </button>
+
+        </li>
+      </ul>
+    </nav>
+  </div>
