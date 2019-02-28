@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
+  @ViewChild('li')
+  li: ElementRef;
+
   navsItem = [
     {
       name : 'Technologie',
@@ -14,12 +17,30 @@ export class NavComponent implements OnInit {
     {
       name : 'kursy',
       link : '#'
+    },
+    {
+      name : 'projekty',
+      link : '#'
+    },
+    {
+      name: 'kontakt',
+      link : '#'
     }
   ];
   constructor() { }
 
   ngOnInit() {
-  console.log(this.navsItem.length + ' ' + this.navsItem[0].name )
+  }
+
+  addHover(li: ElementRef) {
+    li.classList.add('border-top');
+    li.classList.add('shadow');
+    console.log(1);
+
+  }
+  removeHover(li: ElementRef) {
+    li.classList.remove('border-top');
+    li.classList.remove('shadow');
   }
 
 }
